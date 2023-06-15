@@ -1,11 +1,11 @@
 import React from 'react'
-import { Box, CardHeader, CardMedia, CardContent, Avatar, IconButton, Typography, Button } from '@mui/material';
+import { Box, CardMedia, CardContent, IconButton, Typography, Button } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-
+import "../Component/Body/Body.css"
 
 
 
@@ -27,19 +27,20 @@ const SingleBlog = ({ title, isUser, description, name, img, id }) => {
     }
 
     const handleEdit = () => {
+        console.log(id)
         navigate(`/edit-blog/${id}`)
     }
     return (
         <div>
-            <div style={{display:'flex' , justifyContent:'space-between' , alignItems:'center'}}>
+            <div className={"singleCard"} >
                 <p>{title}  </p>
                 {
                     isUser && (
                         <Box display={'flex'}>
-                            <IconButton onClick={handleEdit} sx={{ marginLeft: 'auto',color:'green' }}>
+                            <IconButton onClick={handleEdit} sx={{ marginLeft: 'auto', color: 'green' }}>
                                 <EditIcon />
                             </IconButton>
-                            <IconButton aria-label="settings" onClick={handleDelete} sx={{  color: 'red' }}>
+                            <IconButton aria-label="settings" onClick={handleDelete} sx={{ color: 'red' }}>
                                 <DeleteIcon />
                             </IconButton>
                         </Box>
@@ -53,7 +54,7 @@ const SingleBlog = ({ title, isUser, description, name, img, id }) => {
                     {description}
                 </Typography>
             </CardContent>
-            <Button variant='contained' onClick={()=>navigate(`/detailed-page/${id}`)}>Click to know more</Button>
+            <Button variant='outlined' className='btns2' onClick={()=> navigate(`/detailed-page/${id}`)}>Click to know more</Button>
         </div>
     )
 }
