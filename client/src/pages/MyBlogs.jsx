@@ -30,7 +30,7 @@ const MyBlogs = () => {
             <div className="body-container">
                 <div className="bodyheader">
                     <p style={{ textAlign: 'center', fontSize: '3rem', marginTop: '2rem', fontWeight: '600' }}>
-                        MY BLOGS....</p>
+                        My Blogs....</p>
                 </div>
                 <div className="wrapper">
                     <div className="cards">
