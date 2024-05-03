@@ -31,31 +31,34 @@ const SingleBlog = ({ title, isUser, description, name, img, id }) => {
         navigate(`/edit-blog/${id}`)
     }
     return (
-        <div className='wrapper_container' onClick={() => navigate(`/detailed-page/${id}`)}>
-            <div  className={"singleCard"} >
-                
+        <div className='p-2' onClick={() => navigate(`/detailed-page/${id}`)}>
+            <div className={"singleCard"} >
                 {
                     isUser && (
-                        <Box display={'flex'}>
+                        <div display={'flex'}>
                             <IconButton onClick={handleEdit} sx={{ marginLeft: 'auto', color: 'green' }}>
                                 <EditIcon />
                             </IconButton>
                             <IconButton aria-label="settings" onClick={handleDelete} sx={{ color: 'red' }}>
                                 <DeleteIcon />
                             </IconButton>
-                        </Box>
+                        </div>
                     )
                 }
 
             </div>
-            <CardMedia component="img" height="250" image={img} alt="Paella dish" />
-            <p>{title}  </p>
-            <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                    {description}
-                </Typography>
-            </CardContent>
-            <button  className='btns2' onClick={()=> navigate(`/detailed-page/${id}`)}>Click to know more</button>
+            <img className='w-full h-36 bg-cover rounded-tl-lg rounded-tr-lg' src={img} alt="Paella dish" />
+            <p className='text-xl'>{title}  </p>
+            <div>
+                <p>
+                    {
+                        description.split(' ').length > 10 ?
+                            description.split(' ').slice(0, 10).join(' ') + "..." :
+                            description
+                    }
+                </p>
+            </div>
+            <button className='bg-slate-900 text-white hover:bg-black p-2 mt-4' onClick={() => navigate(`/detailed-page/${id}`)}>Click to know more</button>
         </div>
     )
 }

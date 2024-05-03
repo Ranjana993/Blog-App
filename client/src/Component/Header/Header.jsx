@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { authAction } from '../../redux/store'
-import SearchIcon from '@mui/icons-material/Search';
 
 const Header = () => {
   const [clicked, setClicked] = useState(false)
@@ -30,12 +29,8 @@ const Header = () => {
   }
   return (
     <>
-      <nav className="container">
+      <nav className="bg-black">
         <div className="header-icon" onClick={() => navigate("/")}>BLOG APP</div>
-        <div id={"inputBox"}>
-          <input type="text" placeholder='Search Blogs' />
-          <span style={{float:'right', marginTop:'5px' }}><SearchIcon/> </span>
-        </div>
         <div>
           <ul id="navbar" className={clicked ? "navbar active" : "navbar"}>
             <li><Link to="/" className='active'> All Blogs </Link></li>
@@ -44,12 +39,12 @@ const Header = () => {
             {
               !isLogin ? (
                 <>
-                  <li> <Link to="/login"> LOGIN</Link></li>
-                  <li> <Link to="/register"> REGISTER</Link></li>
+                  <li> <Link to="/login"> Login</Link></li>
+                  <li> <Link to="/register"> Register</Link></li>
                 </>
               )
                 :
-                <li> <Link to="#" onClick={logoutBtn} > LOGOUT</Link></li>
+                <li className='bg-red-500 text-white rounded-lg hover:text-white p-4'> <Link to="#" onClick={logoutBtn} > Logout</Link></li>
             }
           </ul>
         </div>
