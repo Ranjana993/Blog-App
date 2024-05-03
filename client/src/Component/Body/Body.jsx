@@ -1,6 +1,5 @@
 import React from 'react'
-import { Button } from "@mui/material"
-import "./Body.css"
+
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
@@ -27,13 +26,13 @@ const Body = () => {
 
     return (
         <>
-            <div className="body-container">
-                <div className="bodyheader">
-                    <p style={{ textAlign: 'center', fontSize: '3rem', marginTop: '2rem', fontWeight: '600' }}>
-                        LIST OF ALL BLOGS....</p>
+            <div className="">
+                <div className="">
+                    <p className='text-red-600' >
+                        List of all blogs ....</p>
                 </div>
-                <div className="wrapper">
-                    <div className="cards">
+                <div className="">
+                    <div className="">
                         {
                             blogs && blogs?.map((blog) => (
                                 <div className="card" key={blog._id} >

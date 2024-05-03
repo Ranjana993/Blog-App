@@ -5,7 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import "../Component/Body/Body.css"
+
 
 
 
@@ -31,9 +31,9 @@ const SingleBlog = ({ title, isUser, description, name, img, id }) => {
         navigate(`/edit-blog/${id}`)
     }
     return (
-        <div>
-            <div className={"singleCard"} >
-                <p>{title}  </p>
+        <div className='wrapper_container' onClick={() => navigate(`/detailed-page/${id}`)}>
+            <div  className={"singleCard"} >
+                
                 {
                     isUser && (
                         <Box display={'flex'}>
@@ -49,12 +49,13 @@ const SingleBlog = ({ title, isUser, description, name, img, id }) => {
 
             </div>
             <CardMedia component="img" height="250" image={img} alt="Paella dish" />
+            <p>{title}  </p>
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
                     {description}
                 </Typography>
             </CardContent>
-            <Button variant='outlined' className='btns2' onClick={()=> navigate(`/detailed-page/${id}`)}>Click to know more</Button>
+            <button  className='btns2' onClick={()=> navigate(`/detailed-page/${id}`)}>Click to know more</button>
         </div>
     )
 }
