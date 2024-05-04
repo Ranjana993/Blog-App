@@ -28,16 +28,16 @@ const DetailedPage = () => {
     }, [id])
 
     return (
-        <div className='container-Detail'>
-            <div id="img">
-                <img src={blog.image} alt="" />
+        <div className='flex flex-col lg:flex-row  gap-2 w-full p-2'>
+            <div className='w-full lg:w-1/2'>
+                <img className='w-full' src={blog.image} alt="" />
             </div>
-            <div className="data">
-                <h1> {blog.title}</h1>
+            <div className="w-full p-0 lg:px-12">
+                <h1 className='text-4xl py-4'> {blog.title}</h1>
                 <p> {blog.description}</p>
-                <div className="btns">
-                    <Button variant='outlined' className='btn1' onClick={() => navigate("/")}>Back to Home</Button>
-                    <Button variant='outlined' className='btn1' onClick={() => navigate(`/edit-blog/${blog._id}`)} >UPDATE</Button>
+                <div className="flex gap-2 float-right  mt-24">
+                    <button className='bg-green-700 text-white p-2 rounded-lg' onClick={() => navigate("/")}>Back to Home</button>
+                    <button className='bg-green-700 text-white p-2 rounded-lg' onClick={() => navigate(`/edit-blog/${blog._id}`)} >Suggest Changes </button>
                 </div>
             </div>
         </div>

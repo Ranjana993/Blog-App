@@ -35,87 +35,46 @@ const CreateBlog = () => {
     }
 
     return (
-        <Wrappar>
-            <StyledForm onSubmit={handleSubmit} >
-                <Box>
-                    <Typography variant={'h4'} margin={'auto'} textAlign={'center'} mt={'10%'} color={'#2196f3'}>
-                        CREATE  BLOG
-                    </Typography>
-                    <Wraper>
-                        <TextField
-                            variant="standard"
+        <div className='flex justify-center items-center mt-8'>
+            <form onSubmit={handleSubmit} className='w-[90%] lg:w-1/2  ' >
+                <div className='flex justify-center items-center flex-col'>
+                    <h1 className='text-4xl py-4'>CREATE  BLOG</h1>
+                    <div className='flex flex-col justify-center gap-4 w-full px-4'>
+                        <input
                             name='title'
                             type={'title'}
+                            className='w-full indent-5 h-10 border-none outline-none rounded-md p-1'
                             value={datas.title}
                             onChange={e => handleChange(e)}
-                            label="Enter title here"
+                            placeholder="Enter title here"
                             required
                         />
-                        <TextField
-                            variant="standard"
-                            name='description'
-                            type={'description'}
-                            value={datas.description}
-                            onChange={e => handleChange(e)}
-                            label="Enter description here"
-                            required
-                        />
-                        <TextField
-                            variant="standard"
+                        <input
                             name='image'
                             type={'text'}
+                            className='w-full indent-5 h-10 border-none outline-none rounded-md p-1'
                             value={datas.image}
                             onChange={e => handleChange(e)}
-                            label="Enter image url here"
+                            placeholder="Enter image url here"
                             required
                         />
-                        <CreateBlogBtn variant='contained' type='submit'>CREATE </CreateBlogBtn>
-                    </Wraper>
-                </Box>
-            </StyledForm>
-        </Wrappar>
+                        <textarea
+                            name='description'
+                            type={'description'}
+                            cols={100}
+                            className='w-full indent-5 py-4 border-none outline-none rounded-md p-1'
+                            value={datas.description}
+                            onChange={e => handleChange(e)}
+                            placeholder="Enter description here"
+                            required
+                        />
+                        <button className='bg-slate-800 p-2 w-full text-white' type='submit'>Publish Your Post </button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
     )
 }
 
 export default CreateBlog
-
-const Wrappar = styled(Box)`
-    background-image:url("https://img.freepik.com/premium-photo/cup-coffee-eyeglasses-book-pencil-holder-white-table_649760-377.jpg?w=360");
-    background-repeat:no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    margin-top: 0;
-    overflow: hidden;
-    overflow-x: none;
-    background-position: center;
-    
-
-`
-const StyledForm = styled('form')({
-    opacity: '1',
-    zIndex: '1'
-})
-
-const Wraper = styled(Box)`
-    display: flex;
-    width: 50%;
-    margin: auto;
-    flex-direction: column;
-    padding: 25px 35px;
-    flex: 1;
-    & > div ,& > button ,& >p{
-        margin-top: 20px;
-    }
-    z-index:0 ;
-`
-const CreateBlogBtn = styled(Button)`
-    text-transform: none;
-    background-color: #2196f3;
-    color: #fff;
-    height: 48px;
-    border-radius: 2px;
-
-
-`
