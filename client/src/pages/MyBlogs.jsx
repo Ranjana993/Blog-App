@@ -27,17 +27,14 @@ const MyBlogs = () => {
 
     return (
         <>
-            <div className="body-container">
-                <div className="bodyheader">
-                    <p style={{ textAlign: 'center', fontSize: '3rem', marginTop: '2rem', fontWeight: '600' }}>
-                        My Blogs....</p>
-                </div>
-                <div className="wrapper">
-                    <div className="cards">
+            <div className='flex items-center justify-center flex-col w-full'>
+                <p className='text-4xl'>My Blogs....</p>
+                <div>
+                    <div className="flex justify-center items-center w-full">
                         {
                             blogs && blogs?.map((blog) => (
-                                <div className="card">
-                                    <SingleBlog 
+                                <div className="w-full ">
+                                    <SingleBlog
                                         id={blog._id}
                                         isUser={true}
                                         description={blog.description}
