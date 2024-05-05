@@ -31,8 +31,8 @@ const SingleBlog = ({ title, isUser, description, name, img, id }) => {
         navigate(`/edit-blog/${id}`)
     }
     return (
-        <div className='p-2' onClick={() => navigate(`/detailed-page/${id}`)}>
-            <div className={"singleCard"} >
+        <div className='p-2 w-full' onClick={() => navigate(`/detailed-page/${id}`)}>
+            <div className={"singleCard "} >
                 {
                     isUser && (
                         <div display={'flex'}>

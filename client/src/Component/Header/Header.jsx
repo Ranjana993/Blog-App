@@ -33,14 +33,14 @@ const Header = () => {
         <div className="header-icon" onClick={() => navigate("/")}>BLOG APP</div>
         <div>
           <ul id="navbar" className={clicked ? "navbar active" : "navbar"}>
-            <li><Link to="/" className='active'> All Blogs </Link></li>
-            <li> <Link to="/my-blog">My Blog </Link></li>
-            <li> <Link to="/create-new-blog">Create Blogs </Link></li>
+            <li><Link to="/" className='active' onClick={handleClick}> All Blogs </Link></li>
+            <li> <Link to="/my-blog" onClick={handleClick}>My Blog </Link></li>
+            <li> <Link to="/create-new-blog" onClick={handleClick}>Create Blogs </Link></li>
             {
               !isLogin ? (
                 <>
-                  <li> <Link to="/login"> Login</Link></li>
-                  <li> <Link to="/register"> Register</Link></li>
+                  <li> <Link to="/login" onClick={handleClick}> Login</Link></li>
+                  <li> <Link to="/register" onClick={handleClick}> Register</Link></li>
                 </>
               )
                 :

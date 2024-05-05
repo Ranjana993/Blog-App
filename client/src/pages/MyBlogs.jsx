@@ -28,12 +28,12 @@ const MyBlogs = () => {
     return (
         <>
             <div className='flex items-center justify-center flex-col w-full'>
-                <p className='text-4xl'>My Blogs....</p>
+                <p className='text-4xl py-6'>My Blogs....</p>
                 <div>
-                    <div className="flex justify-center items-center w-full">
+                    <div className="flex flex-col lg:flex-row gap-4 justify-center flex-wrap">
                         {
                             blogs && blogs?.map((blog) => (
-                                <div className="w-full ">
+                                <div className="px-6 lg:px-0 w-full lg:w-[20%] h-auto">
                                     <SingleBlog
                                         id={blog._id}
                                         isUser={true}
