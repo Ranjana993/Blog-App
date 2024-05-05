@@ -12,7 +12,7 @@ const MyBlogs = () => {
     const gettingSigleBlog = async () => {
         try {
             const id = localStorage.getItem('userId')
-            const { data } = await axios.get(`http://localhost:8000/all-blog/${id}`)
+            const { data } = await axios.get(`https://blog-app-ujvu.onrender.com/all-blog/${id}`)
             if (data?.success) {
                 setBlogs(data?.userBlog.blogs)
             }

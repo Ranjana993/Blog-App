@@ -16,7 +16,7 @@ const SingleBlog = ({ title, isUser, description, name, img, id }) => {
 
     const handleDelete = async () => {
         try {
-            const { data } = await axios.delete(`http://localhost:8000/delete-blog/${id}`);
+            const { data } = await axios.delete(`https://blog-app-ujvu.onrender.com/delete-blog/${id}`);
             if (data?.success) {
                 toast.success('Deleted successfully')
             }

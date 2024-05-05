@@ -15,7 +15,7 @@ const Login = () => {
 
     const loginUser = async (e) => {
         try {
-            const { data } = await axios.post("http://localhost:8000/login", users)
+            const { data } = await axios.post("https://blog-app-ujvu.onrender.com/login", users)
             if (data.success) {
                 dispatch(authAction.login())
                 localStorage.setItem('userId', data?.User._id)

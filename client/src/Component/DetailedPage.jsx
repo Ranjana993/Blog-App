@@ -11,7 +11,7 @@ const DetailedPage = () => {
     const navigate = useNavigate()
     const handleEdit = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8000/get-single-blog/${id}`);
+            const { data } = await axios.get(`https://blog-app-ujvu.onrender.com/get-single-blog/${id}`);
             console.log(data)
             console.log(data.newBlog);
             if (data?.success) {

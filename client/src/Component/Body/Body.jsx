@@ -9,7 +9,7 @@ const Body = () => {
 
     const getAllBlogs = async () => {
         try {
-            const { data } = await axios.get('http://localhost:8000/get-all-blog');
+            const { data } = await axios.get('https://blog-app-ujvu.onrender.com/get-all-blog');
             if (data?.success) {
                 setBlogs(data.blog);
             }

@@ -18,7 +18,7 @@ const Editblog = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.put(`http://localhost:8000/update-blog/${id}`, {
+            const { data } = await axios.put(`https://blog-app-ujvu.onrender.com/update-blog/${id}`, {
                 title: datas?.title,
                 description: datas?.description,
                 image: datas?.image,
@@ -39,7 +39,7 @@ const Editblog = () => {
 
     const handleEdit = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8000/get-single-blog/${id}`);
+            const { data } = await axios.get(`https://blog-app-ujvu.onrender.com/get-single-blog/${id}`);
             console.log(data);
             if (data?.success) {
                 setBlog(data?.blog)

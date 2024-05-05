@@ -16,7 +16,7 @@ const Register = () => {
     const signUpUser = async (e) => {
         // e.preventDefault();
         try {
-            const { data } = await axios.post("http://localhost:8000/register", users)
+            const { data } = await axios.post("https://blog-app-ujvu.onrender.com/register", users)
             if (data.success) {
                 toast.success("Registerd succesfully ")
             }
