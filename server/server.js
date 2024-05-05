@@ -6,7 +6,10 @@ import bodyParser from "body-parser"
 // import blogRouter from "./routes/blogRouter.js";
 import router from "./routes/userRoute.js";
 import blogRouter from "./routes/blogRoute.js";
+import dotenv from 'dotenv';
 
+
+dotenv.config();
 
 const app = express();
 app.use(cors())
