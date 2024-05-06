@@ -51,7 +51,7 @@ const CreateBlog = () => {
                         />
                         <input
                             name='image'
-                            type={'text'}
+                            type={'file'}
                             className='w-full indent-5 h-10 border-none outline-none rounded-md p-1'
                             value={datas.image}
                             onChange={e => handleChange(e)}

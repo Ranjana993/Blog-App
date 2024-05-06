@@ -87,7 +87,7 @@ const Editblog = () => {
                         variant="standard"
                         className='w-full rounded-md  border-none outline-none h-10 indent-1 '
                         name='image'
-                        type={'text'}
+                        type={'file'}
                         value={datas.image}
                         onChange={e => handleChange(e)}
                         required

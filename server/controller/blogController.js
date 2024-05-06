@@ -4,10 +4,6 @@ import userModel from "../models/userModel.js";
 
 
 
-
-
-
-
 export const getAllBlogs = async (req, res) => {
     try {
         const blog = await blogModal.find({}).populate('user')
@@ -56,7 +52,7 @@ export const createBlog = async (req, res) => {
             });
         }
 
-        const newBlog = new blogModal({ title, description, image, user });
+        const newBlog = new blogModal({ title, description, image: '/images/' + (req.file ? req.file.filename : 'default-image.jpg') , user });
         const session = await mongoose.startSession();
         session.startTransaction();
         await newBlog.save(session);
