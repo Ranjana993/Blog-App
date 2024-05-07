@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
 import SingleBlog from '../../pages/SingleBlog';
+import Footer from '../Footer';
 
 const Body = () => {
     const [blogs, setBlogs] = useState([]);
@@ -59,6 +60,7 @@ const Body = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };

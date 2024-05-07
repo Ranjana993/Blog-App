@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Button } from "@mui/material"
+import Footer from './Footer'
 
 const DetailedPage = () => {
     const [blog, setBlog] = useState({})
@@ -28,6 +29,7 @@ const DetailedPage = () => {
     }, [id])
 
     return (
+        <> 
         <div className='flex flex-col lg:flex-row  gap-2 w-full p-2'>
             <div className='w-full lg:w-1/2'>
                 <img className='w-full' src={blog.image} alt="" />
@@ -41,6 +43,8 @@ const DetailedPage = () => {
                 </div>
             </div>
         </div>
+        <Footer />
+        </>
     )
 }
 

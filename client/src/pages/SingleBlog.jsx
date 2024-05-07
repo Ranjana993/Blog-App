@@ -62,7 +62,6 @@ const SingleBlog = ({ title, isUser, description, name, img, id }) => {
                 </div>
                 <button className='bg-slate-900 text-white hover:bg-black p-2 mt-4' onClick={() => navigate(`/detailed-page/${id}`)}>Click to know more</button>
             </div>
-            <Footer />
         </>
     )
 }

@@ -76,7 +76,6 @@ const CreateBlog = () => {
                     </div>
                 </form>
             </div>
-            <Footer />
         </>
     )
 }
