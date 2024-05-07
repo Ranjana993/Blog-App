@@ -61,8 +61,8 @@ const Editblog = () => {
 
     return (
         <form onSubmit={handleSubmit} className='flex p-4 justify-center '>
-            <div className='flex w-1/2 justify-center items-center flex-col'>
-                <h2 className='text-6xl py-6'>Update Your Blog </h2>
+            <div className='flex w-[90%] lg:w-1/2 justify-center items-center flex-col'>
+                <h2 className='text-4xl lg:text-6xl py-6'>Update Your Blog </h2>
                 <div className='flex w-full flex-col gap-4 justify-center items-center'>
                     <input
                         variant="standard"
@@ -87,12 +87,12 @@ const Editblog = () => {
                         variant="standard"
                         className='w-full rounded-md  border-none outline-none h-10 indent-1 '
                         name='image'
-                        type={'file'}
+                        type={'text'}
                         value={datas.image}
                         onChange={e => handleChange(e)}
                         required
                     />
-                    <button className='p-2 px-12 hover:bg-green-900 bg-green-700 rounded-lg text-white' type='submit'>UPDATE </button>
+                    <button className='p-2 px-12 hover:bg-green-900 bg-green-700 rounded-lg text-white' type='submit'>Update </button>
                 </div>
             </div>
         </form>

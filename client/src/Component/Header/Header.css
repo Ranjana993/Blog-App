@@ -41,6 +41,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 12px;
     /* margin-right: -100px; */
 }
 
@@ -49,7 +50,14 @@ nav {
     padding: 0 12px;
     position: relative;
 }
-
+#navbar li:last-child{
+    background: red;
+    color: white; 
+    padding: 5px 22px;
+}
+#navbar li:last-child:hover{
+    color: white !important;
+}
 #navbar li a {
     text-decoration: none;
     font-size: 1.3rem;

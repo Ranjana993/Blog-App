@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Box, Button, styled, TextField } from '@mui/material'
 import { toast } from 'react-hot-toast'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
@@ -30,56 +29,36 @@ const Login = () => {
     }
     return (
         <div>
-            <form>
-                <Wraper>
-                    <TextField
-                        variant="standard"
+            <form className='w-full flex flex-col justify-center items-center'>
+
+                <div className='flex gap-2 flex-col w-[90%] lg:w-1/2 justify-center items-center'>
+                    <h1 className='text-6xl py-8'>Sign In </h1>
+                    <input
                         name='email'
                         type={'email'}
                         value={users.email}
                         onChange={e => handleChange(e)}
-                        label="Enter Email"
+                        placeholder="Enter Email"
                         required
+                        className='w-full border-none outline-none p-2 h-10 indent-1 rounded-md'
                     />
-                    <TextField
-                        variant="standard"
+                    <input
                         name='password'
                         type={'password'}
                         value={users.password}
                         onChange={e => handleChange(e)}
-                        label="Enter Password"
+                        placeholder="Enter Password"
                         required
+                        className='w-full border-none outline-none p-2 h-10 indent-1 rounded-md'
                     />
-                    <LoginBtn variant='contained' onClick={() => loginUser()}>Login</LoginBtn>
-                    <LoginBtn variant='contained' style={{ fontSize: '12px' }} onClick={() => navigate("/register")}>Not a user Register now </LoginBtn>
-                </Wraper>
+                    <button className='bg-black my-4 w-full p-2 text-white outline-none border-none' onClick={() => loginUser()}>Login</button>
+                    <p className=' w-full p-2 text-black text-center font-bold ' >Not a user Register now </p>
+                    <button className=' text-black font-bold hover:bg-black hover:text-white p-2 w-full border-2 border-black' onClick={() => navigate("/register")}>Register Here</button>
+                </div>
             </form>
         </div>
     )
 }
 
 export default Login
-const Wraper = styled(Box)`
-    display: flex;
-    width: 50%;
-    margin: auto;
-    flex-direction: column;
-    padding: 25px 35px;
-    flex: 1;
-    & > div ,& > button ,& >p{
-        margin-top: 20px;
-    }
 
-`
-
-const LoginBtn = styled(Button)(({ theme }) => ({
-    textTransform: 'none',
-    backgroundcolor: '#2a3239',
-    color: '#fff',
-    height: '48px',
-    borderRadius: '2px',
-    [theme.breakpoints.down('md')]: {
-        fontSize: "15px"
-    }
-}
-))

@@ -4,6 +4,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import SingleBlog from './SingleBlog';
+import Footer from '../Component/Footer';
 
 
 const MyBlogs = () => {
@@ -48,6 +49,7 @@ const MyBlogs = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

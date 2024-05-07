@@ -35,6 +35,7 @@ export const getSingleBlog = async (req, res) => {
 
 export const createBlog = async (req, res) => {
     try {
+        console.log(req.body);
         const { title, description, image, user } = req.body;
         //validation
         if (!title || !description || !image || !user) {

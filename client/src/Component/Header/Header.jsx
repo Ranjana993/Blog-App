@@ -34,13 +34,12 @@ const Header = () => {
         <div>
           <ul id="navbar" className={clicked ? "navbar active" : "navbar"}>
             <li><Link to="/" className='active' onClick={handleClick}> All Blogs </Link></li>
-            <li> <Link to="/my-blog" onClick={handleClick}>My Blog </Link></li>
-            <li> <Link to="/create-new-blog" onClick={handleClick}>Create Blogs </Link></li>
+            {isLogin &&<li> <Link to="/my-blog" onClick={handleClick}>My Blog </Link></li>}
+            {isLogin && <li> <Link to="/create-new-blog" onClick={handleClick}>Create Blogs </Link></li> } 
             {
               !isLogin ? (
                 <>
-                  <li> <Link to="/login" onClick={handleClick}> Login</Link></li>
-                  <li> <Link to="/register" onClick={handleClick}> Register</Link></li>
+                  <li className='bg-blue-600 px-8 rounded-md text-white'> <Link to="/login" onClick={handleClick}> Login</Link></li>
                 </>
               )
                 :
